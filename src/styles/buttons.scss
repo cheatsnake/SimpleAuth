@@ -1,0 +1,31 @@
+.btn {
+    cursor: pointer;
+    width: 150px;
+    height: 45px;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    transition: 0.3s all;
+    &_out {
+        background-color: rgb(218, 64, 64);
+        &:hover {
+            background-color: rgb(148, 44, 44);
+        }
+    }
+    &_log {
+        background-color: rgb(64, 92, 218);
+        &:hover {
+            background-color: rgb(47, 68, 163);
+        }
+    }
+    &_create {
+        background-color: rgb(52, 179, 94);
+        &:hover {
+            background-color: rgb(44, 134, 74);
+        }
+    }
+}
