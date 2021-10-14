@@ -6,10 +6,11 @@ import { Loading } from '../components/Loading';
 import { Message, Title } from '../components/Titles';
 
 interface ILoginPage {
-    cookies: any
+    cookies: any,
+    onLogin: Function
 }
 
-const LoginPage: FC<ILoginPage> = ({cookies}) => {
+const LoginPage: FC<ILoginPage> = ({cookies, onLogin}) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -18,10 +19,10 @@ const LoginPage: FC<ILoginPage> = ({cookies}) => {
 
     function onForm(e: any) {
         e.preventDefault();
-        onLogin();
+        login();
     }
 
-    async function onLogin() {
+    async function login() {
         setLoad(true);
         const response = await fetch('https://auth-api-v0.herokuapp.com/auth/login', {
             method: 'POST',
@@ -33,10 +34,8 @@ const LoginPage: FC<ILoginPage> = ({cookies}) => {
         
         const result = await response.json();
         if (response.ok) {
-            cookies.set('token', result.token, { path: '/' });
-            cookies.set('user', result.username, { path: '/' });
+            onLogin(result);
             setMessage('');
-            window.location.reload();
         } else {
             setMessage(result.message);
         }
@@ -69,7 +68,7 @@ const LoginPage: FC<ILoginPage> = ({cookies}) => {
                     maxLength={20}/>
                 {message ? <Message>{message}</Message> : null}
                 <LogButton>Login</LogButton>
-                <Link to="/register" className="link">New User?</Link>
+                <Link to="/SimpleAuth/register" className="link">New User?</Link>
             </form>
         </AuthBlock>
     );

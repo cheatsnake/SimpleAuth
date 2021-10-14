@@ -3,17 +3,14 @@ import { LogoutButton } from '../components/Buttons';
 import { Title } from '../components/Titles';
 
 interface IAppPage {
-    cookies: any
+    cookies: any,
+    onLogout: Function
 }
 
-const AppPage: FC<IAppPage> = ({cookies}) => {
+const AppPage: FC<IAppPage> = ({cookies, onLogout}) => {
 
-    function onLogout() {
-        cookies.remove('token');
-        cookies.remove('user');
-        window.location.reload();
-    }
-    
+    console.log(cookies);
+
     return (
         <div>
             <Title>Hello {cookies.cookies.user}!</Title>

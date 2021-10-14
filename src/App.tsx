@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import './styles/app.scss';
@@ -9,22 +9,46 @@ import RegPage from './pages/RegPage';
 
 const App: FC = () => {
 
+    const [update, setUpdate] = useState(true);
     const cookies = new Cookies();
+
+    useEffect(() => {
+        return () => setUpdate(true)
+    }, [])
+
+    function onLogout() {
+        cookies.remove('token');
+        cookies.remove('user');
+        setUpdate(!update);
+    }
+
+    function onLogin(result: {token: string, username: string}) {
+        cookies.set('token', result.token, { path: '/SimpleAuth' });
+        cookies.set('user', result.username, { path: '/SimpleAuth' });
+        setUpdate(!update);
+    }
+    
 
     return (
         <Router>
             <div className="app">
                 <Switch>
-                    <Route path="/login">
-                        { !cookies.get('token') ?  <LoginPage cookies={cookies}/> : <Redirect to="/app"/> }
+                    <Route path="/SimpleAuth/login">
+                        { !cookies.get('token') ?  
+                            <LoginPage cookies={cookies} onLogin={onLogin}/> : 
+                            <Redirect to="/SimpleAuth/app"/> }
                     </Route>
-                    <Route path="/register">
-                        { !cookies.get('token') ?  <RegPage/> : <Redirect to="/app"/> }
+                    <Route path="/SimpleAuth/register">
+                        { !cookies.get('token') ?  
+                            <RegPage/> : 
+                            <Redirect to="/SimpleAuth/app"/> }
                     </Route>
-                    <Route path="/app">
-                        { cookies.get('token') ? <AppPage cookies={cookies}/> : <Redirect to="/login"/> }
+                    <Route path="/SimpleAuth/app">
+                        { cookies.get('token') ? 
+                            <AppPage cookies={cookies} onLogout={onLogout}/> : 
+                            <Redirect to="/SimpleAuth/login"/> }
                     </Route>
-                    <Redirect to="/app"/>
+                    <Redirect to="/SimpleAuth/app"/>
                 </Switch>
             </div>
         </Router>
