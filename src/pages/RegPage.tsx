@@ -7,12 +7,12 @@ import { Title, Message } from '../components/Titles';
 
 const RegPage: FC = () => {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [repeatPass, setRepeatPass] = useState('');
-    const [message, setMessage] = useState('');
-    const [status, setStatus] = useState(false);
-    const [load, setLoad] = useState(false);
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [repeatPass, setRepeatPass] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+    const [status, setStatus] = useState<boolean>(false);
+    const [load, setLoad] = useState<boolean>(false);
 
     function onForm(e: any):void {
         e.preventDefault();

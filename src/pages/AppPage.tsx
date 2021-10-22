@@ -9,10 +9,8 @@ interface IAppPage {
 
 const AppPage: FC<IAppPage> = ({cookies, onLogout}) => {
 
-    console.log(cookies);
-
     return (
-        <div>
+        <div className="app__block">
             <Title>Hello {cookies.cookies.user}!</Title>
             <LogoutButton func={onLogout}>Logout</LogoutButton>
         </div>

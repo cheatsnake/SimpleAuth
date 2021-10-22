@@ -6,16 +6,15 @@ import { Loading } from '../components/Loading';
 import { Message, Title } from '../components/Titles';
 
 interface ILoginPage {
-    cookies: any,
     onLogin: Function
 }
 
-const LoginPage: FC<ILoginPage> = ({cookies, onLogin}) => {
+const LoginPage: FC<ILoginPage> = ({onLogin}) => {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
-    const [load, setLoad] = useState(false);
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+    const [load, setLoad] = useState<boolean>(false);
 
     function onForm(e: any) {
         e.preventDefault();

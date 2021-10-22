@@ -9,20 +9,20 @@ import RegPage from './pages/RegPage';
 
 const App: FC = () => {
 
-    const [update, setUpdate] = useState(true);
+    const [update, setUpdate] = useState<boolean>(true);
     const cookies = new Cookies();
 
     useEffect(() => {
         return () => setUpdate(true)
     }, [])
 
-    function onLogout() {
+    function onLogout():void {
         cookies.remove('token');
         cookies.remove('user');
         setUpdate(!update);
     }
 
-    function onLogin(result: {token: string, username: string}) {
+    function onLogin(result: {token: string, username: string}): void {
         cookies.set('token', result.token, { path: '/SimpleAuth' });
         cookies.set('user', result.username, { path: '/SimpleAuth' });
         setUpdate(!update);
@@ -35,7 +35,7 @@ const App: FC = () => {
                 <Switch>
                     <Route path="/SimpleAuth/login">
                         { !cookies.get('token') ?  
-                            <LoginPage cookies={cookies} onLogin={onLogin}/> : 
+                            <LoginPage onLogin={onLogin}/> : 
                             <Redirect to="/SimpleAuth/app"/> }
                     </Route>
                     <Route path="/SimpleAuth/register">
