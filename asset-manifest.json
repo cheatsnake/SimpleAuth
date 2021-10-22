@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/SimpleAuth/static/css/main.4dfe08fa.chunk.css",
-    "main.js": "/SimpleAuth/static/js/main.8404aea6.chunk.js",
-    "main.js.map": "/SimpleAuth/static/js/main.8404aea6.chunk.js.map",
+    "main.css": "/SimpleAuth/static/css/main.f0a244fe.chunk.css",
+    "main.js": "/SimpleAuth/static/js/main.72e3247b.chunk.js",
+    "main.js.map": "/SimpleAuth/static/js/main.72e3247b.chunk.js.map",
     "runtime-main.js": "/SimpleAuth/static/js/runtime-main.ff0ccc11.js",
     "runtime-main.js.map": "/SimpleAuth/static/js/runtime-main.ff0ccc11.js.map",
     "static/js/2.86ad4c51.chunk.js": "/SimpleAuth/static/js/2.86ad4c51.chunk.js",
     "static/js/2.86ad4c51.chunk.js.map": "/SimpleAuth/static/js/2.86ad4c51.chunk.js.map",
     "index.html": "/SimpleAuth/index.html",
-    "static/css/main.4dfe08fa.chunk.css.map": "/SimpleAuth/static/css/main.4dfe08fa.chunk.css.map",
+    "static/css/main.f0a244fe.chunk.css.map": "/SimpleAuth/static/css/main.f0a244fe.chunk.css.map",
     "static/js/2.86ad4c51.chunk.js.LICENSE.txt": "/SimpleAuth/static/js/2.86ad4c51.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ff0ccc11.js",
     "static/js/2.86ad4c51.chunk.js",
-    "static/css/main.4dfe08fa.chunk.css",
-    "static/js/main.8404aea6.chunk.js"
+    "static/css/main.f0a244fe.chunk.css",
+    "static/js/main.72e3247b.chunk.js"
   ]
 }
