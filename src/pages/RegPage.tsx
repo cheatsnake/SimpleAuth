@@ -80,7 +80,7 @@ const RegPage: FC = () => {
                     maxLength={20}/>
                 {message ? <Message {...status ? {status: "good"} : null}>{message}</Message> : null}
                 <CreateButton>Create</CreateButton>
-                <Link to="/SimpleAuth/login" className="link">Have an account?</Link>
+                <Link to="/login" className="link">Have an account?</Link>
             </form>
         </AuthBlock>
     );

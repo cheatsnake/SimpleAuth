@@ -11,9 +11,9 @@ interface ILoginPage {
 
 const LoginPage: FC<ILoginPage> = ({onLogin}) => {
 
-    const [username, setUsername] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-    const [message, setMessage] = useState<string>('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
     const [load, setLoad] = useState<boolean>(false);
 
     function onForm(e: any) {
@@ -67,7 +67,7 @@ const LoginPage: FC<ILoginPage> = ({onLogin}) => {
                     maxLength={20}/>
                 {message ? <Message>{message}</Message> : null}
                 <LogButton>Login</LogButton>
-                <Link to="/SimpleAuth/register" className="link">New User?</Link>
+                <Link to="/register" className="link">New User?</Link>
             </form>
         </AuthBlock>
     );
