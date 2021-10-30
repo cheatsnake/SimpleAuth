@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SimpleAuth/static/css/main.f0a244fe.chunk.css",
-    "main.js": "/SimpleAuth/static/js/main.e18db055.chunk.js",
-    "main.js.map": "/SimpleAuth/static/js/main.e18db055.chunk.js.map",
+    "main.js": "/SimpleAuth/static/js/main.0720425c.chunk.js",
+    "main.js.map": "/SimpleAuth/static/js/main.0720425c.chunk.js.map",
     "runtime-main.js": "/SimpleAuth/static/js/runtime-main.ff0ccc11.js",
     "runtime-main.js.map": "/SimpleAuth/static/js/runtime-main.ff0ccc11.js.map",
     "static/js/2.4a596efa.chunk.js": "/SimpleAuth/static/js/2.4a596efa.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ff0ccc11.js",
     "static/js/2.4a596efa.chunk.js",
     "static/css/main.f0a244fe.chunk.css",
-    "static/js/main.e18db055.chunk.js"
+    "static/js/main.0720425c.chunk.js"
   ]
 }
